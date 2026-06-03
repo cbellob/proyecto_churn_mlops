@@ -1,19 +1,34 @@
-# Métricas del modelo de churn
+# Métricas del modelo
 
-## Resultados principales
+Este archivo almacenará los resultados de evaluación del modelo.
 
-| Métrica | Valor |
-|---|---:|
-| Accuracy | 1.0000 |
-| Precision | 1.0000 |
-| Recall | 1.0000 |
-| F1-score | 1.0000 |
+Inicialmente se encuentra vacío porque el modelo todavía no ha sido entrenado ni evaluado.
 
-## Interpretación inicial
+Después de ejecutar el script:
 
-Estas métricas permiten evaluar el desempeño inicial del modelo de clasificación.
+```text
+src/evaluar_modelo.py
+```
 
-- Accuracy indica el porcentaje general de aciertos.
-- Precision indica qué tan confiables son las predicciones positivas.
-- Recall indica qué proporción de clientes con churn fueron identificados.
-- F1-score resume precision y recall en una sola métrica.
+este archivo será actualizado automáticamente con las métricas principales.
+
+## Experimento controlado
+
+### Rama creada
+experimento-hiperparametro
+
+### Cambio realizado
+Se modificaron los hiperparámetros del modelo LogisticRegression:
+
+- C = 0.5
+- max_iter = 500
+- random_state = 42
+
+### Archivo modificado
+src/entrenar_modelo.py
+
+### Resultado obtenido
+El modelo fue reentrenado y evaluado correctamente utilizando los nuevos hiperparámetros.
+
+### Interpretación
+El experimento demuestra que es posible ajustar hiperparámetros del modelo manteniendo el flujo completo de entrenamiento, evaluación y versionado mediante Git.
