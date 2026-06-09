@@ -65,3 +65,15 @@ def predict(cliente: Cliente):
         "churn_predicho": prediccion,
         "probabilidad_churn": probabilidad
     }
+
+from fastapi import FastAPI
+
+app = FastAPI(title="Servicio ML-Ops - Churn")
+
+@app.get("/")
+def inicio():
+    return {
+        "mensaje": "Servicio ML-Ops activo",
+        "estado": "ok",
+        "autor": "Carolina Bello"
+    }
