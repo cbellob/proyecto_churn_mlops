@@ -473,6 +473,36 @@ def metrics() -> dict:
     return resumen_metricas()
 
 # ============================================================
+# BLOQUE 15.1. ENDPOINT GET /info
+# ============================================================
+
+@app.get("/info")
+def info() -> dict:
+    """
+    Devuelve información general de la API y del modelo.
+    """
+
+    return {
+        "nombre_api": "API predictiva de churn",
+        "autor": AUTOR,
+        "version_modelo": VERSION_MODELO,
+        "version_api": "2.0.0",
+        "mejora_tecnica": "Endpoint informativo agregado como personalización técnica",
+        "variables_utilizadas": [
+            "antiguedad",
+            "cargo_mensual",
+            "reclamos"
+        ],
+        "endpoints_disponibles": [
+            "/",
+            "/health",
+            "/metrics",
+            "/info",
+            "/predict"
+        ]
+    }
+
+# ============================================================
 # BLOQUE 16. ENDPOINT POST /predict
 # ============================================================
 # AQUÍ SE IMPLEMENTA:
